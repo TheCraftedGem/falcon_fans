@@ -19,6 +19,16 @@ defmodule FalconFansWeb.Router do
     get "/", PageController, :index
   end
 
+
+
+  scope "/", FalconFansWeb do
+    pipe_through :browser # Use the default browser stack
+
+    get "/news", NewsController, :index
+  end
+
+
+
   # Other scopes may use custom stacks.
   # scope "/api", FalconFansWeb do
   #   pipe_through :api
